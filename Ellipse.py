@@ -3,8 +3,9 @@ from math import sqrt, ceil
 
 size = 800
 rad = 300
+percent = 0.5
 y = 0.0
-previous_y = int(rad * 0.5)
+previous_y = int(rad * percent)
 
 pg.init()
 window = pg.display.set_mode((size, size), pg.SHOWN)
@@ -17,7 +18,7 @@ while True:
             exit()
 
     for x in range(1, rad + 1):
-        y = sqrt(rad * rad - (x ** 2)) * 0.5
+        y = sqrt(rad * rad - (x ** 2)) * percent
         y = ceil(y)
         pg.draw.line(window, (0, 0, 0), (size // 2 + x - 1, size // 2 - previous_y), (size // 2 + x, size // 2 - y), 5)
         pg.draw.line(window, (0, 0, 0), (size // 2 + x - 1, size // 2 + previous_y), (size // 2 + x, size // 2 + y), 5)
