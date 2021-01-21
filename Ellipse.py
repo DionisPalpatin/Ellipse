@@ -14,7 +14,7 @@ window.fill((255, 255, 255))
 while True:
     for event in pg.event.get():
         if event.type == pg.QUIT:
-            pg.exit()
+            pg.quit()
             exit()
 
     for x in range(1, rad + 1):
